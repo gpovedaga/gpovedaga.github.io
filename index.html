@@ -166,13 +166,13 @@
         <div class="formacion-cards">
             <div class="card">
                 <a href="https://www.nuevogimnasioschool.edu.co/" target="_blank">
-                    <img src="colegio.jpg" alt="Imagen del Colegio Nuevo Gimnasio School">
+                    <img src="images.jpg" alt="Imagen del Colegio Nuevo Gimnasio School">
                 </a>
                 <p>Colegio Nuevo Gimnasio School - Bachiller académico</p>
             </div>
             <div class="card">
                 <a href="https://www.unbosque.edu.co/" target="_blank">
-                    <img src="universidad.jpg" alt="Imagen de la Universidad El Bosque">
+                    <img src="download.jpg" alt="Imagen de la Universidad El Bosque">
                 </a>
                 <p>Universidad El Bosque - 4º semestre</p>
             </div>
@@ -180,13 +180,19 @@
     </section>
 
     <section id="habilidades" class="habilidades">
-        <h2>Habilidades Técnicas</h2>
-        <ul>
-            <li>Java</li>
-            <li>Python</li>
-            <li>HTML</li>
-        </ul>
-    </section>
+    <h2>Habilidades Técnicas</h2>
+    <div class="skills-container">
+        <div class="skill-column">
+            <h3>Java</h3>
+            </div>
+        <div class="skill-column">
+            <h3>Python</h3>
+            </div>
+        <div class="skill-column">
+            <h3>HTML</h3>
+            </div>
+    </div>
+</section>
 
     <section id="proyectos">
         <h2>Proyectos</h2>
@@ -207,7 +213,6 @@
     </footer>
 
     <script>
-        // Navegación suave
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
