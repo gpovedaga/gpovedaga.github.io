@@ -11,42 +11,63 @@
             background-color: #fcf8f8;
             color: #000000;
         }
-        header {
-            background-color: #f5afaf;
-            color: #000000;
-            text-align: center;
-            padding: 20px;
-        }
-        header h1 {
-            margin: 0;
-        }
-        header h2 {
-            margin: 5px 0 0;
-            font-weight: normal;
-        }
         nav {
             background-color: #fbefef;
             display: flex;
             justify-content: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
         nav a {
             color: #000000;
             padding: 14px 20px;
             text-decoration: none;
+            transition: text-shadow 0.3s;
         }
         nav a:hover {
-            background-color: #f9dfdf;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .main-section {
+            margin-top: 60px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            background-color: #fcf8f8;
+        }
+        .avatar-column {
+            flex: 1;
+            text-align: center;
+        }
+        .avatar-column img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid #f5afaf;
+        }
+        .info-column {
+            flex: 1;
+            text-align: left;
+            padding-left: 20px;
+        }
+        .info-column h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #000000;
+        }
+        .info-column p {
+            font-size: 1.2em;
+            color: #666;
         }
         section {
             padding: 20px;
+            margin-top: 20px;
+            background-color: #fcf8f8;
         }
         .presentacion {
             text-align: center;
-        }
-        .presentacion img {
-            width: 150px;
-            border-radius: 50%;
-            margin: 15px 0;
         }
         .video-container {
             margin-top: 20px;
@@ -86,11 +107,6 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Gabriela Poveda García</h1>
-        <h2>Estudiante de Ingeniería de Sistemas</h2>
-    </header>
-
     <nav>
         <a href="#presentacion">Presentación</a>
         <a href="#formacion">Formación</a>
@@ -99,9 +115,18 @@
         <a href="#contacto">Contacto</a>
     </nav>
 
+    <div class="main-section">
+        <div class="avatar-column">
+            <img src="avatar.jpg" alt="Foto">
+        </div>
+        <div class="info-column">
+            <h1>Gabriela Poveda García</h1>
+            <p>Estudiante de Ingeniería de Sistemas</p>
+        </div>
+    </div>
+
     <section id="presentacion" class="presentacion">
         <h2>Presentación</h2>
-        <img src="avatar.jpg" alt="Foto">
         <p>Me interesa la tecnología y la resolución de problemas, con interés en el desarrollo de software y la gestión de bases de datos.</p>
         <div class="video-container">
             <video width="400" controls>
@@ -142,5 +167,18 @@
     <footer>
         <p>© 2026 Gabriela Poveda García</p>
     </footer>
+
+    <script>
+        // Navegación suave
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
