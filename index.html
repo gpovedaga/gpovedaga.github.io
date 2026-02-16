@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Gabriela Poveda García</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #fcf8f8;
+            color: #000000;
+        }
+        header {
+            background-color: #f5afaf;
+            color: #000000;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        header h2 {
+            margin: 5px 0 0;
+            font-weight: normal;
+        }
+        nav {
+            background-color: #fbefef;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: #000000;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #f9dfdf;
+        }
+        section {
+            padding: 20px;
+        }
+        .presentacion {
+            text-align: center;
+        }
+        .presentacion img {
+            width: 150px;
+            border-radius: 50%;
+            margin: 15px 0;
+        }
+        .video-container {
+            margin-top: 20px;
+        }
+        .habilidades ul {
+            list-style: none;
+            padding: 0;
+        }
+        .habilidades li {
+            background-color: #fbefef;
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 5px;
+        }
+        .proyectos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .proyecto {
+            background-color: #f9dfdf;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .proyecto a {
+            text-decoration: none;
+            color: #000000;
+        }
+        footer {
+            background-color: #f5afaf;
+            color: #000000;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gabriela Poveda García</h1>
+        <h2>Estudiante de Ingeniería de Sistemas</h2>
+    </header>
+
+    <nav>
+        <a href="#presentacion">Presentación</a>
+        <a href="#formacion">Formación</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <section id="presentacion" class="presentacion">
+        <h2>Presentación</h2>
+        <img src="avatar.jpg" alt="Foto">
+        <p>Me interesa la tecnología y la resolución de problemas, con interés en el desarrollo de software y la gestión de bases de datos.</p>
+        <div class="video-container">
+            <video width="400" controls>
+                <source src="videoPresentacion.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+    </section>
+
+    <section id="formacion">
+        <h2>Formación Académica</h2>
+        <p>Universidad El Bosque - 4º semestre</p>
+    </section>
+
+    <section id="habilidades" class="habilidades">
+        <h2>Habilidades Técnicas</h2>
+        <ul>
+            <li>Java</li>
+            <li>Python</li>
+            <li>HTML</li>
+        </ul>
+    </section>
+
+    <section id="proyectos">
+        <h2>Proyectos</h2>
+        <div class="proyectos">
+            <div class="proyecto"><a href="#">Proyecto 1</a></div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Email: <a href="mailto:gpovedaga@unbosque.edu.co">gpovedaga@unbosque.edu.co</a></p>
+        <p>GitHub: <a href="#">github.com/gpovedaga</a></p>
+        <p>Ubicación: Bogotá, Colombia</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Gabriela Poveda García</p>
+    </footer>
+</body>
+</html>
