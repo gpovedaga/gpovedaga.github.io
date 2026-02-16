@@ -28,6 +28,7 @@
         }
         nav a:hover {
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            background-color: #f5afaf;
         }
         .main-section {
             margin-top: 60px; /* Espacio para el nav fijo */
@@ -97,6 +98,30 @@
             text-decoration: none;
             color: #000000;
         }
+        .formacion-cards {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: #f9dfdf;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+            max-width: 300px;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .card a {
+            text-decoration: none;
+            color: #000000;
+        }
         footer {
             background-color: #f5afaf;
             color: #000000;
@@ -136,9 +161,22 @@
         </div>
     </section>
 
-    <section id="formacion">
+   <section id="formacion">
         <h2>Formación Académica</h2>
-        <p>Universidad El Bosque - 4º semestre</p>
+        <div class="formacion-cards">
+            <div class="card">
+                <a href="https://www.nuevogimnasioschool.edu.co/" target="_blank">
+                    <img src="colegio.jpg" alt="Imagen del Colegio Nuevo Gimnasio School">
+                </a>
+                <p>Colegio Nuevo Gimnasio School - Bachiller académico</p>
+            </div>
+            <div class="card">
+                <a href="https://www.unbosque.edu.co/" target="_blank">
+                    <img src="universidad.jpg" alt="Imagen de la Universidad El Bosque">
+                </a>
+                <p>Universidad El Bosque - 4º semestre</p>
+            </div>
+        </div>
     </section>
 
     <section id="habilidades" class="habilidades">
