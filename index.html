@@ -72,8 +72,14 @@
             text-align: center;
         }
         .video-container {
-            margin-top: 20px;
-        }
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+}
+.video-container video:hover {
+  border-color: #f19c9c;
+}
         .habilidades ul {
             list-style: none;
             padding: 0;
@@ -213,14 +219,14 @@
     text-align: right;
 }
 .video-container video {
-  border: 3px solid #f5afaf;   
-  border-radius: 12px;     
-  
-display: flex;
-    justify-content: center;
-
+  border: 3px solid #f5afaf;  
+  border-radius: 12px;
+  display: block;
+  max-width: 100%;
+  height: auto;
   box-sizing: border-box;
 }
+``
 
 .skills-container {
     display: flex;
