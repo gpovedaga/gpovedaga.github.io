@@ -132,6 +132,82 @@
         #contacto {
     background-color: #f5afaf;
 }
+
+.habilidades {
+  overflow: hidden;
+  position: relative;
+  background-color: #fcf8f8; 
+}
+
+.skills-slider {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #f0dede;
+  background: #fff7f7;
+}
+
+.skills-track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 0;
+  width: max-content;
+  animation: slideRight 12s linear infinite;
+}
+
+.skills-slider:hover .skills-track {
+  animation-play-state: paused;
+}
+
+.skill-item {
+  flex: 0 0 auto;
+  text-align: center;
+  min-width: 140px;  
+}
+
+.skill-item img {
+  height: 90px;             
+  width: auto;
+  display: block;
+  margin: 0 auto 8px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,.12));
+  transition: transform .25s ease, filter .25s ease;
+}
+
+.skill-item img:hover {
+  transform: translateY(-4px) scale(1.04);
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.18));
+}
+
+.skill-item span {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  font-size: .95rem;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-50%); 
+  }
+  to {
+    transform: translateX(0);    
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-track { gap: 28px; }
+  .skill-item { min-width: 110px; }
+  .skill-item img { height: 70px; }
+}
+
+@media (max-width: 480px) {
+  .skills-track { gap: 22px; }
+  .skill-item { min-width: 96px; }
+  .skill-item img { height: 60px; }
+}
+
     </style>
 </head>
 <body>
@@ -190,18 +266,37 @@
     </section>
 
     <section id="habilidades" class="habilidades">
-    <h2>Habilidades Técnicas</h2>
-    <div class="skills-container">
-        <div class="skill-column">
-            <h3>Java</h3>
-        </div>
-        <div class="skill-column">
-            <h3>Python</h3>
-        </div>
-        <div class="skill-column">
-            <h3>HTML</h3>
-        </div>
+  <h2>Habilidades Técnicas</h2>
+
+  <div class="skills-slider" aria-label="Carrusel de habilidades técnicas">
+    <div class="skills-track">
+      <div class="skill-item">
+        <img src="src/java.png" alt="Logo de Java">
+        <span>Java</span>
+      </div>
+      <div class="skill-item">
+        <img src="src/python.png" alt="Logo de Python">
+        <span>Python</span>
+      </div>
+      <div class="skill-item">
+        <img src="src/html.png" alt="Logo de HTML">
+        <span>HTML</span>
+      </div>
+
+      <div class="skill-item">
+        <img src="src/java.png" alt="Logo de Java duplicado">
+        <span>Java</span>
+      </div>
+      <div class="skill-item">
+        <img src="src/python.png" alt="Logo de Python duplicado">
+        <span>Python</span>
+      </div>
+      <div class="skill-item">
+        <img src="src/html.png" alt="Logo de HTML duplicado">
+        <span>HTML</span>
+      </div>
     </div>
+  </div>
 </section>
 
     <section id="proyectos">
