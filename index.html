@@ -101,6 +101,35 @@
             text-align: center;
             border-radius: 8px;
         }
+
+        .proyectos-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.proyectos-cards .card {
+    background-color: #f9dfdf;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+}
+
+.proyectos-cards .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.proyectos-cards .card img:hover {
+    transform: scale(1.05);
+}
+
         .proyecto a {
             text-decoration: none;
             color: #000000;
@@ -238,6 +267,16 @@
     text-align: center; 
 }
 
+.presentacion .skills-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;    
+  text-align: center;      
+  gap: 20px;              
+}
+
+
     </style>
 </head>
 <body>
@@ -260,21 +299,18 @@
 </div>
 
     <section id="presentacion" class="presentacion">
-    <h2>Presentación</h2>
-    <div class="skills-container">
-            <div class="video-container">
-                <video width="400" controls>
-  <source src="src/videoPresentacion.mp4" type="video/mp4">
-  Tu navegador no soporta la reproducción de video.
-</video>
-
-            </div>
-        
-        <
-            <p>Me interesa la tecnología y la resolución de problemas, con interés en el desarrollo de software y la gestión de bases de datos.</p>
-        
+  <h2>Presentación</h2>
+  <div class="skills-container">
+    <div class="video-container">
+      <video width="400" controls>
+        <source src="src/videoPresentacion.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+      </video>
     </div>
+    <p>Me interesa la tecnología y la resolución de problemas, con interés en el desarrollo de software y la gestión de bases de datos.</p>
+  </div>
 </section>
+
 
    <section id="formacion">
         <h2>Formación Académica</h2>
@@ -342,11 +378,23 @@
 </section>
 
     <section id="proyectos">
-        <h2>Proyectos / Trabajos</h2>
-        <div class="proyectos">
-            <div class="proyecto"><a href="https://lucid.app/lucidchart/b617ad19-4648-406a-9fcb-a84fd3de18b1/edit?invitationId=inv_1222ef7b-c1c8-411a-a71b-e624bd7d92be">Primer MER</a></div>
+    <h2>Proyectos / Trabajos</h2>
+    <div class="proyectos-cards">
+        <div class="card">
+            <a href="https://lucid.app/lucidchart/b617ad19-4648-406a-9fcb-a84fd3de18b1/edit?invitationId=inv_1222ef7b-c1c8-411a-a71b-e624bd7d92be" target="_blank">
+                <img src="src/PrimerMER.png" alt="Previsualización del primer MER">
+            </a>
+            <p>Primer MER</p>
         </div>
-    </section>
+        <div class="card">
+            <a href="https://lucid.app/lucidchart/46a9b657-e80f-4430-b576-bac90c07925b/edit?viewport_loc=-1035%2C-130%2C1510%2C1416%2C0_0&invitationId=inv_1876558f-378d-406e-bef5-d5447849c931">
+                <img src="src/PlataformastreamingMER.png" alt="Previsualización del MER de una plataforma de streaming">
+            </a>
+            <p>MER: Plataforma streaming</p>
+        </div>
+    </div>
+</section>
+
 
     
 
