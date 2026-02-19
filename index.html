@@ -31,28 +31,30 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
             background-color: #f5afaf;
         }
-        .main-section {
-            margin-top: 60px; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 50px;
-            background-color: #fcf8f8;
+        .main-section { margin-top: 60px; display: flex; justify-content: center; align-items: center; padding: 40px; background-color: #f5afaf;
+            border-radius: 16px; 
+             max-width: 800px; 
+            margin-left: auto; 
+            margin-right: auto; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
         }
         .avatar-column {
-            flex: 1;
+            flex: 0 0 150px;
             text-align: center;
         }
         .avatar-column img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 2px solid #f5afaf;
+            border: 3px solid #ffffff;
         }
         .info-column {
             flex: 1;
             text-align: left;
-            padding-left: 20px;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .info-column h1 {
             margin: 0;
@@ -61,7 +63,7 @@
         }
         .info-column p {
             font-size: 1.2em;
-            color: #666;
+            color: #333;
         }
         section {
             padding: 20px;
@@ -129,6 +131,16 @@
 .proyectos-cards .card img:hover {
     transform: scale(1.05);
 }
+
+.formacion-cards .card img,
+.proyectos-cards .card img {
+  width: 100%;              
+  aspect-ratio: 4 / 3;      
+  object-fit: cover;        
+  border-radius: 8px;       
+  margin-bottom: 10px;
+}
+
 
         .proyecto a {
             text-decoration: none;
@@ -266,6 +278,10 @@
 .skill-column {
     text-align: center; 
 }
+.presentacion .video-container video { 
+    width: 400px; 
+     max-width: 100%; 
+    }
 
 .presentacion .skills-container {
   display: flex;
@@ -275,6 +291,14 @@
   text-align: center;      
   gap: 20px;              
 }
+
+.presentacion p { 
+    width: 400px;
+     text-align: justify; 
+     font-size: 1.1em; 
+     color: #333; 
+     margin: 0; 
+    }
 
 
     </style>
