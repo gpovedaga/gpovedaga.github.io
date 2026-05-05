@@ -449,6 +449,171 @@
       nav a { padding: 5px 10px; font-size: .72rem; }
       .footer-inner { flex-direction: column; gap: 32px; }
     }
+
+    .download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  background: var(--blush);
+  color: var(--deep);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  border-radius: 40px;
+  text-decoration: none;
+  border: 1.5px solid var(--border);
+  transition: background .2s, transform .2s, box-shadow .2s;
+  white-space: nowrap;
+}
+
+.download-btn:hover {
+  background: var(--rose);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(122,63,63,.18);
+}
+
+/* ── PDF Viewer (tabbed) ── */
+.pdf-viewer {
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+
+.pdf-tabs {
+  display: flex;
+  gap: 2px;
+  background: var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.pdf-tab {
+  flex: 1;
+  padding: 8px 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--mid);
+  background: var(--card);
+  border: none;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pdf-tab.active {
+  background: var(--cream);
+  color: var(--deep);
+  font-weight: 700;
+  border-bottom: 2px solid var(--rose);
+}
+
+.pdf-tab:hover:not(.active) {
+  background: var(--blush);
+  color: var(--deep);
+}
+
+.pdf-slides { position: relative; }
+
+.pdf-slide { display: none; }
+.pdf-slide.active { display: block; }
+
+.pdf-slide img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  display: block;
+  background: #f9f0f0;
+  cursor: zoom-in;
+  transition: transform .4s;
+}
+
+.project-card:hover .pdf-slide img { transform: scale(1.02); }
+
+.pdf-zoom-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  padding: 5px 10px;
+  font-size: .72rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  background: rgba(253,246,240,.92);
+  color: var(--deep);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+  z-index: 2;
+}
+
+.pdf-zoom-btn:hover {
+  background: var(--blush);
+  transform: translateY(-2px);
+}
+
+/* ── PDF Lightbox ── */
+.pdf-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(20,8,8,.9);
+  backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+.pdf-lightbox.open { display: flex; }
+
+.pdf-lightbox-img {
+  max-width: 92vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 32px 80px rgba(0,0,0,.5);
+}
+
+.pdf-lightbox-close {
+  position: fixed;
+  top: 18px; right: 22px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  cursor: pointer;
+  opacity: .8;
+  transition: opacity .2s, transform .2s;
+}
+.pdf-lightbox-close:hover { opacity: 1; transform: rotate(90deg); }
+
+.pdf-lightbox-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.pdf-lightbox-tabs button {
+  padding: 6px 18px;
+  border-radius: 30px;
+  border: 1.5px solid rgba(255,255,255,.3);
+  background: rgba(255,255,255,.1);
+  color: #fff;
+  font-size: .78rem;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s;
+}
+.pdf-lightbox-tabs button.active {
+  background: var(--rose);
+  border-color: var(--rose);
+}
   </style>
 </head>
 <body>
@@ -585,6 +750,55 @@
           </a>
         </div>
 
+<div class="project-card has-carousel" id="card-mer-tablas">
+  <div class="carousel-wrapper" id="carousel-mer-tablas">
+    <div class="carousel-slides" id="slides-mer-tablas">
+      <img src="src/comida.jpg" alt="Comida">
+      <img src="src/Residuos-Residuo.jpg" alt="Residuos">
+      <img src="src/employee.jpg" alt="Residuos">
+    </div>
+    <button class="carousel-btn prev" data-carousel="mer-tablas" aria-label="Anterior">‹</button>
+    <button class="carousel-btn next" data-carousel="mer-tablas" aria-label="Siguiente">›</button>
+    <div class="carousel-dots" id="dots-mer-tablas">
+      <span class="active" data-carousel="mer-tablas" data-index="0"></span>
+      <span data-carousel="mer-tablas" data-index="1"></span>
+    </div>
+  </div>
+  <div class="project-card-body">
+    <h3>Actividades MER pasadas a tablas</h3>
+    <p>Residuos y comida.</p>
+    <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:14px;">
+      <a href="https://drive.google.com/file/d/1YxAfLsD6xf40ktXtAyxFqFRoslajFJvO/view?usp=sharing"
+         target="_blank" class="project-link" style="margin-top:0;">Ver en Drive</a>
+      <a href="src/Taller1.zip" download="Taller1.zip" class="download-btn">
+         Descargar modelos relacionales
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="project-card" id="card-normalizacion">
+  <div class="pdf-viewer" id="pdfv-norm">
+    <div class="pdf-tabs" role="tablist">
+      <button class="pdf-tab active" data-pdfv="norm" data-idx="0">Sistema de Envío</button>
+      <button class="pdf-tab" data-pdfv="norm" data-idx="1">Video Club</button>
+    </div>
+    <div class="pdf-slides" id="pdfslides-norm">
+      <div class="pdf-slide active">
+        <img src="src/normalizacion_envio.png" alt="Sistema de Envío Internacional">
+      </div>
+      <div class="pdf-slide">
+        <img src="src/normalizacion_videoclub.png" alt="Sistema Integral de Video Club">
+      </div>
+    </div>
+    <button class="pdf-zoom-btn" data-pdfv="norm">⤢ Ampliar</button>
+  </div>
+  <div class="project-card-body">
+    <h3>Taller Avanzado Normalización</h3>
+    <p>Sistema de Envío Internacional de Mercancía y Sistema Integral de Video Club.</p>
+  </div>
+</div>
+
       </div>
     </div>
   </section>
@@ -616,8 +830,176 @@
     const observer = new IntersectionObserver(entries => {
       entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
     }, { threshold: 0.12 });
-
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    const carousels = {};
+
+    function initCarousel(id) {
+      const slides = document.getElementById(`slides-${id}`);
+      const dots   = document.querySelectorAll(`[data-carousel="${id}"][data-index]`);
+      if (!slides) return;
+      carousels[id] = { index: 0, total: slides.children.length };
+
+      function goTo(n) {
+        const c = carousels[id];
+        c.index = (n + c.total) % c.total;
+        slides.style.transform = `translateX(-${c.index * 50}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === c.index));
+      }
+
+      document.querySelectorAll(`.carousel-btn[data-carousel="${id}"]`).forEach(btn => {
+        btn.addEventListener('click', e => {
+          e.stopPropagation();
+          goTo(carousels[id].index + (btn.classList.contains('next') ? 1 : -1));
+        });
+      });
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', e => {
+          e.stopPropagation();
+          goTo(+dot.dataset.index);
+        });
+      });
+
+      document.getElementById(`carousel-${id}`).addEventListener('click', () => {
+        openLightbox(id, carousels[id].index);
+      });
+    }
+
+    initCarousel('mer-tablas');
+
+    const lightbox   = document.getElementById('lightbox');
+    const lbImg      = document.getElementById('lightbox-img');
+    const lbClose    = document.getElementById('lightbox-close');
+    const lbPrev     = document.getElementById('lb-prev');
+    const lbNext     = document.getElementById('lb-next');
+    const lbDots     = document.querySelectorAll('[data-lb-index]');
+
+    let lbState = { id: null, index: 0, images: [] };
+
+    function openLightbox(carouselId, startIndex) {
+      const slides = document.getElementById(`slides-${carouselId}`);
+      const imgs   = Array.from(slides.querySelectorAll('img')).map(i => ({ src: i.src, alt: i.alt }));
+      lbState = { id: carouselId, index: startIndex, images: imgs };
+      lbRefresh();
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function lbGo(n) {
+      lbState.index = (n + lbState.images.length) % lbState.images.length;
+      lbRefresh();
+      if (lbState.id) {
+        const slides = document.getElementById(`slides-${lbState.id}`);
+        const dots   = document.querySelectorAll(`[data-carousel="${lbState.id}"][data-index]`);
+        carousels[lbState.id].index = lbState.index;
+        slides.style.transform = `translateX(-${lbState.index * 50}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === lbState.index));
+      }
+    }
+
+    function lbRefresh() {
+      const cur = lbState.images[lbState.index];
+      lbImg.style.opacity = 0;
+      setTimeout(() => {
+        lbImg.src = cur.src;
+        lbImg.alt = cur.alt;
+        lbImg.style.opacity = 1;
+      }, 120);
+      lbDots.forEach((d, i) => d.classList.toggle('active', i === lbState.index));
+    }
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', () => lbGo(lbState.index - 1));
+    lbNext.addEventListener('click', () => lbGo(lbState.index + 1));
+    lbDots.forEach(d => d.addEventListener('click', () => lbGo(+d.dataset.lbIndex)));
+
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape')      closeLightbox();
+      if (e.key === 'ArrowLeft')   lbGo(lbState.index - 1);
+      if (e.key === 'ArrowRight')  lbGo(lbState.index + 1);
+    });
+
+document.querySelectorAll('.pdf-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const viewerId = tab.dataset.pdfv;
+    const idx = +tab.dataset.idx;
+    const viewer = document.getElementById(`pdfv-${viewerId}`);
+    viewer.querySelectorAll('.pdf-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
+    viewer.querySelectorAll('.pdf-slide').forEach((s, i) => s.classList.toggle('active', i === idx));
+    // sync lightbox
+    if (activeLbViewer === viewerId) lbShowSlide(idx);
+  });
+});
+
+const pdfLightbox = document.createElement('div');
+pdfLightbox.className = 'pdf-lightbox';
+pdfLightbox.innerHTML = `
+  <button class="pdf-lightbox-close" id="pdfLbClose">×</button>
+  <img class="pdf-lightbox-img" id="pdfLbImg" src="" alt="">
+  <div class="pdf-lightbox-tabs" id="pdfLbTabs"></div>
+`;
+document.body.appendChild(pdfLightbox);
+
+let activeLbViewer = null;
+const pdfLbImg = document.getElementById('pdfLbImg');
+const pdfLbTabs = document.getElementById('pdfLbTabs');
+
+function lbShowSlide(idx) {
+  if (!activeLbViewer) return;
+  const viewer = document.getElementById(`pdfv-${activeLbViewer}`);
+  const slides = viewer.querySelectorAll('.pdf-slide img');
+  pdfLbImg.src = slides[idx]?.src || '';
+  pdfLbTabs.querySelectorAll('button').forEach((b, i) => b.classList.toggle('active', i === idx));
+
+  viewer.querySelectorAll('.pdf-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
+  viewer.querySelectorAll('.pdf-slide').forEach((s, i) => s.classList.toggle('active', i === idx));
+}
+
+function openPdfLightbox(viewerId) {
+  activeLbViewer = viewerId;
+  const viewer = document.getElementById(`pdfv-${viewerId}`);
+  const tabs = viewer.querySelectorAll('.pdf-tab');
+  pdfLbTabs.innerHTML = '';
+  tabs.forEach((t, i) => {
+    const btn = document.createElement('button');
+    btn.textContent = t.textContent;
+    btn.className = t.classList.contains('active') ? 'active' : '';
+    btn.onclick = () => lbShowSlide(i);
+    pdfLbTabs.appendChild(btn);
+  });
+  const activeIdx = [...viewer.querySelectorAll('.pdf-tab')].findIndex(t => t.classList.contains('active'));
+  lbShowSlide(activeIdx >= 0 ? activeIdx : 0);
+  pdfLightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+document.getElementById('pdfLbClose').onclick = () => {
+  pdfLightbox.classList.remove('open');
+  document.body.style.overflow = '';
+  activeLbViewer = null;
+};
+
+pdfLightbox.addEventListener('click', e => { if (e.target === pdfLightbox) document.getElementById('pdfLbClose').click(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') document.getElementById('pdfLbClose').click(); });
+
+document.querySelectorAll('.pdf-zoom-btn').forEach(btn => {
+  btn.addEventListener('click', () => openPdfLightbox(btn.dataset.pdfv));
+});
+document.querySelectorAll('.pdf-slide img').forEach(img => {
+  img.addEventListener('click', () => {
+    const viewerId = img.closest('.pdf-viewer').id.replace('pdfv-', '');
+    openPdfLightbox(viewerId);
+  });
+});
   </script>
 </body>
 </html>
