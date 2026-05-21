@@ -748,7 +748,7 @@
     </div>
   </section>
 
-  <section id="proyectos">
+ <section id="proyectos">
     <div class="section-inner" style="max-width:1100px;">
       <div class="section-label fade-in">04 — Trabajos</div>
       <h2 class="section-title fade-in">Proyectos</h2>
@@ -759,7 +759,7 @@
             <img src="src/PrimerMER.png" alt="Primer MER">
             <div class="project-card-body">
               <h3>Primer modelos ER</h3>
-              <p>Modelo entidad–relación de aerolinea.</p>
+              <p>Diseño conceptual de cinco casos reales: empresa de transportes, inmobiliaria, sistema de pedidos proveedor–cliente, biblioteca comunitaria y cadena de supermercados. Para cada uno se identificaron entidades, atributos, llaves primarias y foráneas, cardinalidades y se realizó la reducción a tablas con documentación de restricciones de correspondencia.</p>
               <span class="project-link">Ver en Lucidchart</span>
             </div>
           </a>
@@ -770,7 +770,7 @@
             <img src="src/PlataformastreamingMER.png" alt="MER Plataforma Streaming">
             <div class="project-card-body">
               <h3>Modelo ER: Plataforma Streaming</h3>
-              <p>Modelo entidad–relación para una plataforma de streaming.</p>
+              <p>Modelado conceptual de una plataforma tipo Netflix: usuarios, suscripciones, catálogo de contenido, géneros, actores y registros de visualización. Se definieron las cardinalidades entre entidades (muchos a muchos con tablas intermedias) y se documentaron las decisiones de diseño para garantizar integridad referencial.</p>
               <span class="project-link">Ver en Lucidchart</span>
             </div>
           </a>
@@ -781,7 +781,7 @@
             <img src="src/modelosv1.png" alt="Taller modelos ER V1">
             <div class="project-card-body">
               <h3>Taller modelos ER V1</h3>
-              <p>7 actividades de modelos</p>
+              <p>Resolución de 7 ejercicios de modelado entidad–relación aplicando notación Peter Chen. Los casos cubren dominios variados (gestión universitaria, hospitales, ventas, entre otros), con énfasis en identificar correctamente entidades débiles, atributos multivaluados y relaciones ternarias, más su reducción a esquema relacional.</p>
               <span class="project-link">Ver en Lucidchart</span>
             </div>
           </a>
@@ -792,7 +792,7 @@
             <img src="src/BasesDeDatos.drawio.png" alt="Taller modelos ER V3 y V4">
             <div class="project-card-body">
               <h3>Taller modelos ER V3 y V4</h3>
-              <p>Actividades de diferentes modelos ER.</p>
+              <p>Aplicación del Modelo Entidad–Relación Extendido (MER-E) sobre casos de mayor complejidad, incorporando herencia, especialización y generalización. Desarrollado en draw.io según las herramientas recomendadas por el docente. Incluye justificación escrita de cada decisión de diseño y los supuestos asumidos por el equipo.</p>
               <span class="project-link">Ver en Drive</span>
             </div>
           </a>
@@ -815,7 +815,7 @@
           </div>
           <div class="project-card-body">
             <h3>Actividades MER pasadas a tablas</h3>
-            <p>Residuos y comida.</p>
+            <p>Transformación de modelos conceptuales a esquema relacional para dos casos: gestión de residuos tóxicos y servicio de comidas a domicilio. El proceso incluyó identificar relaciones N:M con tablas intermedias, definir llaves primarias y foráneas, y verificar que el esquema final reflejara fielmente las restricciones del modelo original.</p>
             <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:14px;">
               <a href="https://drive.google.com/file/d/1YxAfLsD6xf40ktXtAyxFqFRoslajFJvO/view?usp=sharing"
                  target="_blank" class="project-link" style="margin-top:0;">Ver en Drive</a>
@@ -844,13 +844,25 @@
           </div>
           <div class="project-card-body">
             <h3>Taller Avanzado Normalización</h3>
-            <p>Sistema de Envío Internacional de Mercancía y Sistema Integral de Video Club.</p>
+            <p>Proceso formal de normalización hasta 3FN aplicado a dos sistemas complejos: un sistema de envío internacional de mercancía (LOGISTIC SYSTEMS S.A.S.) y un sistema de videoclub. Para cada caso se identificó la forma normal de partida, se detectaron dependencias parciales y transitivas, y se documentó la transformación paso a paso hasta obtener el esquema relacional final.</p>
             <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px;">
               <a href="src/Taller_Avanzado_Normalizacion_A.pdf" download="aTablas.pdf" class="download-btn">
                 ⬇ A tablas
               </a>
               <a href="src/Taller_Avanzado_Normalizacion_A (1).pdf" download="Preguntas.pdf" class="download-btn">
                 ⬇ Preguntas
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-body" style="padding-top:24px;">
+            <h3>Taller SQL Avanzado + Transacciones ACID</h3>
+            <p>Desarrollo completo de un proceso de ajuste salarial sobre el esquema HR de Oracle usando SQL avanzado. El taller incluyó: (1) consulta diagnóstica con CTEs y funciones analíticas (DENSE_RANK) para analizar brechas salariales por departamento; (2) determinación de empleados elegibles aplicando reglas de antigüedad, historial laboral y exclusiones por departamento; (3) prevalidación de impacto económico; (4) ejecución transaccional con SAVEPOINT, UPDATE y registro de auditoría en tabla dedicada; y (5) validación posterior con cuatro salidas de resultados. Se justificaron las propiedades ACID (atomicidad, consistencia, aislamiento y durabilidad) de la transacción.</p>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <a href="src/scriptsTallerSQLAvanzado.zip" download="scriptsTallerSQLAvanzado.zip" class="download-btn">
+                ⬇ Descargar scripts SQL
               </a>
             </div>
           </div>
