@@ -856,14 +856,44 @@
           </div>
         </div>
 
-        <div class="project-card" id="card-sql-avanzado">
-  <div class="pdf-viewer" id="pdfv-sql">
-    <div class="pdf-slides" id="pdfslides-sql">
-      <div class="pdf-slide active">
-        <img src="src/Laboratorio_SQL.pdf" alt="Laboratorio SQL">
-      </div>
+        <div class="project-card has-carousel" id="card-sql-avanzado">
+  <div class="carousel-wrapper" id="carousel-sql">
+    <div class="carousel-slides" id="slides-sql">
+      <img src="src/Laboratorio SQL_page-0001.jpg" alt="Página 1">
+      <img src="src/Laboratorio SQL_page-0002.jpg" alt="Página 2">
+      <img src="src/Laboratorio SQL_page-0003.jpg" alt="Página 3">
+      <img src="src/Laboratorio SQL_page-0004.jpg" alt="Página 4">
+      <img src="src/Laboratorio SQL_page-0005.jpg" alt="Página 5">
+      <img src="src/Laboratorio SQL_page-0006.jpg" alt="Página 6">
+      <img src="src/Laboratorio SQL_page-0007.jpg" alt="Página 7">
+      <img src="src/Laboratorio SQL_page-0008.jpg" alt="Página 8">
+      <img src="src/Laboratorio SQL_page-0009.jpg" alt="Página 9">
+      <img src="src/Laboratorio SQL_page-0010.jpg" alt="Página 10">
+      <img src="src/Laboratorio SQL_page-0011.jpg" alt="Página 11">
+      <img src="src/Laboratorio SQL_page-0012.jpg" alt="Página 12">
+      <img src="src/Laboratorio SQL_page-0013.jpg" alt="Página 13">
+      <img src="src/Laboratorio SQL_page-0014.jpg" alt="Página 14">
+      <img src="src/Laboratorio SQL_page-0015.jpg" alt="Página 15">
     </div>
-    <button class="pdf-zoom-btn" data-pdfv="sql">⤢ Ampliar</button>
+    <button class="carousel-btn prev" data-carousel="sql" aria-label="Anterior">‹</button>
+    <button class="carousel-btn next" data-carousel="sql" aria-label="Siguiente">›</button>
+    <div class="carousel-dots" id="dots-sql">
+      <span class="active" data-carousel="sql" data-index="0"></span>
+      <span data-carousel="sql" data-index="1"></span>
+      <span data-carousel="sql" data-index="2"></span>
+      <span data-carousel="sql" data-index="3"></span>
+      <span data-carousel="sql" data-index="4"></span>
+      <span data-carousel="sql" data-index="5"></span>
+      <span data-carousel="sql" data-index="6"></span>
+      <span data-carousel="sql" data-index="7"></span>
+      <span data-carousel="sql" data-index="8"></span>
+      <span data-carousel="sql" data-index="9"></span>
+      <span data-carousel="sql" data-index="10"></span>
+      <span data-carousel="sql" data-index="11"></span>
+      <span data-carousel="sql" data-index="12"></span>
+      <span data-carousel="sql" data-index="13"></span>
+      <span data-carousel="sql" data-index="14"></span>
+    </div>
   </div>
   <div class="project-card-body">
     <h3>Taller SQL Avanzado + Transacciones ACID</h3>
@@ -967,6 +997,7 @@
     }
 
     initCarousel('mer-tablas');
+    initCarousel('sql');
 
     const lbEl    = document.getElementById('lightbox');
     const lbImg   = document.getElementById('lightbox-img');
