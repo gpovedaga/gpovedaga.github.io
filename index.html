@@ -257,6 +257,58 @@
 
     #proyectos { background: linear-gradient(160deg, var(--cream) 0%, #ffeaea 100%); }
 
+    .proyectos-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    .proyectos-tab {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      padding: 9px 22px;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+
+    .proyectos-tab.active {
+      background: var(--rose);
+      border-color: var(--rose);
+      color: #fff;
+    }
+
+    .proyectos-tab:hover:not(.active) { background: var(--blush); color: var(--deep); }
+
+    .proyectos-panel { display: none; }
+    .proyectos-panel.active { display: block; }
+
+    .proyectos-empty {
+      background: var(--card);
+      border: 1px dashed var(--border);
+      border-radius: 18px;
+      padding: 60px 40px;
+      text-align: center;
+      color: var(--mid);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .proyectos-empty span {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--rose);
+      margin-bottom: 10px;
+    }
+
     .proyectos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
     .project-card {
@@ -720,7 +772,7 @@
             <img src="src/download.jpg" alt="Universidad El Bosque">
             <div class="edu-card-body">
               <p>Universidad El Bosque</p>
-              <span class="edu-tag">4º Semestre · En curso</span>
+              <span class="edu-tag">5º Semestre · En curso</span>
             </div>
           </a>
         </div>
@@ -738,12 +790,18 @@
         <div class="skill-item"><img src="src/java.png" alt="Java"><span>Java</span></div>
         <div class="skill-item"><img src="src/python.png" alt="Python"><span>Python</span></div>
         <div class="skill-item"><img src="src/html.png" alt="HTML"><span>HTML</span></div>
+        <div class="skill-item"><img src="src/mysql.png" alt="MySQL"><span>MySQL</span></div>
+        <div class="skill-item"><img src="src/oracle.jpg" alt="Oracle"><span>Oracle</span></div>
         <div class="skill-item"><img src="src/java copy.png" alt="Java"><span>Java</span></div>
         <div class="skill-item"><img src="src/python copy.png" alt="Python"><span>Python</span></div>
         <div class="skill-item"><img src="src/html copy.png" alt="HTML"><span>HTML</span></div>
+        <div class="skill-item"><img src="src/mysql.png" alt="MySQL"><span>MySQL</span></div>
+        <div class="skill-item"><img src="src/oracle.jpg" alt="Oracle"><span>Oracle</span></div>
         <div class="skill-item"><img src="src/java copy 2.png" alt="Java"><span>Java</span></div>
         <div class="skill-item"><img src="src/python copy 2.png" alt="Python"><span>Python</span></div>
         <div class="skill-item"><img src="src/html copy 2.png" alt="HTML"><span>HTML</span></div>
+        <div class="skill-item"><img src="src/mysql.png" alt="MySQL"><span>MySQL</span></div>
+        <div class="skill-item"><img src="src/oracle.jpg" alt="Oracle"><span>Oracle</span></div>
       </div>
     </div>
   </section>
@@ -752,6 +810,13 @@
     <div class="section-inner" style="max-width:1100px;">
       <div class="section-label fade-in">04 — Trabajos</div>
       <h2 class="section-title fade-in">Proyectos</h2>
+
+      <div class="proyectos-tabs fade-in">
+        <button class="proyectos-tab active" data-proytab="bd1">BD1</button>
+        <button class="proyectos-tab" data-proytab="bd2">BD2</button>
+      </div>
+
+      <div class="proyectos-panel active" id="panel-bd1">
       <div class="proyectos-grid fade-in">
 
         <div class="project-card">
@@ -907,6 +972,14 @@
 </div>
 
       </div>
+      </div>
+
+      <div class="proyectos-panel" id="panel-bd2">
+        <div class="proyectos-empty">
+          <span>Próximamente :)</span>
+          </div>
+      </div>
+
     </div>
   </section>
 
@@ -935,8 +1008,8 @@
       <div class="footer-links">
         <h4>Contacto</h4>
         <a href="mailto:gpovedaga@unbosque.edu.co">gpovedaga@unbosque.edu.co</a>
-        <a href="#">github.com/gpovedaga</a>
-        <a href="#">Bogotá, Colombia</a>
+        <a href="https://gpovedaga.github.io/">github.com/gpovedaga</a>
+        <a href="">Bogotá, Colombia</a>
       </div>
     </div>
     <div class="footer-bottom">© 2026 Gabriela Poveda García — Todos los derechos reservados</div>
@@ -954,6 +1027,14 @@
       entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    document.querySelectorAll('.proyectos-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.proytab;
+        document.querySelectorAll('.proyectos-tab').forEach(t => t.classList.toggle('active', t === tab));
+        document.querySelectorAll('.proyectos-panel').forEach(p => p.classList.toggle('active', p.id === `panel-${target}`));
+      });
+    });
 
     const carousels = {};
 
@@ -1057,8 +1138,8 @@
     lbNext.addEventListener('click', () => lbGo(lbState.index + 1));
     lbEl.addEventListener('click', e => { if (e.target === lbEl) closeCarouselLightbox(); });
 
-    
-    let activePdfViewer = null;   
+   
+    let activePdfViewer = null;  
 
     const pdfLightbox = document.getElementById('pdfLightbox');
     const pdfLbImg    = document.getElementById('pdfLbImg');
