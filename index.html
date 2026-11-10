@@ -975,9 +975,81 @@
       </div>
 
       <div class="proyectos-panel" id="panel-bd2">
-        <div class="proyectos-empty">
-          <span>Próximamente :)</span>
+      <div class="proyectos-grid fade-in">
+
+        <div class="project-card" id="card-bd2-apuntes">
+          <div class="project-card-body">
+            <h3>BD2</h3>
+            <p>Apuntes de Bases de Datos 2 sobre SQL en Oracle, con ejemplos sobre el esquema HR. Cubren los tipos de JOIN (INNER, LEFT, RIGHT, FULL OUTER, SELF, CROSS, NATURAL y USING) con sus diagramas de Venn, anti joins, filtros con LIKE, CASE/DECODE/COALESCE, la tabla DUAL, funciones de agregación y manejo de nulos, subconsultas correlacionadas y no correlacionadas, CTE, y fundamentos de índices e hints para optimizar consultas. Incluye una actividad de corrección de una consulta con múltiples JOIN.</p>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <a href="src/BD2.docx" download="BD2.docx" class="download-btn">
+                ⬇ Descargar apuntes
+              </a>
+            </div>
           </div>
+        </div>
+
+        <div class="project-card" id="card-plsql">
+          <div class="project-card-body">
+            <h3>PL/SQL</h3>
+            <p>Apuntes de PL/SQL en Oracle: estructura del bloque (DECLARE, BEGIN, EXCEPTION, END), tipos de variables, SELECT INTO, %TYPE y %ROWTYPE, manejo de nulos, bucles con etiquetas (EXIT y CONTINUE), cursores explícitos, manejo de excepciones (predefinidas y propias con RAISE), procedimientos, funciones, triggers, vistas y vistas materializadas. Incluye además una introducción a los patrones de diseño de MongoDB (embebido, referencia, atributo, polimórfico, bucket, cómputo y subset).</p>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <a href="src/PLSQL.docx" download="PLSQL.docx" class="download-btn">
+                ⬇ Descargar apuntes
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="card-lab-mql">
+          <div class="project-card-body">
+            <h3>Lab MQL</h3>
+            <p>Taller de MQL (MongoDB Query Language) sobre la colección listingsAndReviews de sample_airbnb, con 30 ejercicios. Cubre inserciones (insertOne e insertMany, objetos anidados y arreglos), validación de la unicidad del _id, consultas con find (operadores $gt, $lt, $in, $and, regex y $size, proyecciones, sort y limit), actualizaciones (updateOne, updateMany, $set, $push, $inc, $pull y upsert) y pipelines de agregación ($match, $group, $unwind, $project, $bucket, $lookup, $toInt y $year).</p>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <a href="src/lab MQL.docx" download="lab MQL.docx" class="download-btn">
+                ⬇ Descargar taller
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="card-banco-andino">
+          <div class="project-card-body">
+            <h3>Taller Integrador: Banco Andino</h3>
+            <p>Caso de una entidad financiera con 30.000 cuentas y 200.000 transferencias en Oracle Autonomous Database, trabajado desde SQL Developer con dos sesiones simultáneas. Se reprodujeron y corrigieron problemas reales de producción: actualización perdida, bloqueo pesimista (FOR UPDATE) frente a optimista (columna de versión), reparto de una cola con SKIP LOCKED, bloqueo de tabla por llave foránea sin índice e interbloqueo ORA-00060. Incluye optimización con planes de ejecución (índices compuestos, basados en función y de cobertura, clustering factor y costo de escritura), SQL analítico (ROW_NUMBER, SUM OVER, LAG, CTE recursiva, MERGE, PIVOT y LISTAGG) y un reto final: diagnosticar cuatro defectos del core bancario y reescribir la transferencia para que sea atómica y bloquee las cuentas en orden determinista.</p>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <a href="src/TALLER BANCO ANDINO - MANRIQUE Y POVEDA (1).zip" download="Taller_BD2_BancoAndino.zip" class="download-btn">
+                ⬇ Descargar taller
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="card-taller-plsql">
+          <div class="project-card-body">
+            <h3>Taller PL/SQL: Inventario y Ventas</h3>
+            <p>Trabajo en grupo en Oracle sobre un sistema de inventario con bodegas, productos, clientes y pedidos. Se desarrollaron procedimientos almacenados (registro de productos, ajuste de stock con SELECT ... FOR UPDATE, creación de pedidos con control de cupo), funciones invocables desde SQL (stock disponible, cupo y descuentos escalonados) y cursores explícitos, parametrizados, FOR UPDATE, de referencia y con BULK COLLECT y FORALL. Incluye manejo de excepciones (predefinidas, propias, RAISE_APPLICATION_ERROR, PRAGMA EXCEPTION_INIT y un registro de errores con transacción autónoma) y triggers de auditoría, validación e INSTEAD OF. También se resolvió el error de tabla mutante (ORA-04091) con un COMPOUND TRIGGER. Cierra con un paquete PKG_VENTAS que confirma y factura pedidos. Cada objeto incluye su justificación de diseño y sus pruebas documentadas.</p>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <a href="src/TALLER_PLSQL_GRUPO_DylanMancipe_JuanLopez_GabrielaPoveda.zip" download="TALLER_PLSQL_GRUPO_DylanMancipe_JuanLopez_GabrielaPoveda.zip" class="download-btn">
+                ⬇ Descargar taller
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="card-taller-mql">
+          <div class="project-card-body">
+            <h3>Taller MQL: Consultas, Agregación e Índices</h3>
+            <p>Trabajo en grupo en MongoDB sobre la base sample_mflix (películas y comentarios). Incluye consultas con find sobre arreglos y campos anidados ($all, $size, $exists, $ne y expresiones regulares) y pipelines de agregación ($match, $unwind, $group, $lookup, $slice y cálculo de décadas). Se creó una colección con $out y una categoría calculada con $switch, sobre la que se hicieron escrituras masivas con updateMany y deleteMany. También se comparó con explain("executionStats") el plan antes y después de un índice compuesto según la regla ESR (de COLLSCAN a IXSCAN). Cierra con el diseño de documentos para dos casos, una plataforma de domicilios y una red IoT de calidad del aire en Bogotá, aplicando patrones de embebido, referencia extendida, atributo, bucket, cómputo y versionado de esquema, con sus diagramas y colecciones de ejemplo en JSON.</p>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <a href="src/Taller_MQL_DylanMancipe_JuanLopez_GabrielaPoveda.zip" download="Taller_MQL_DylanMancipe_JuanLopez_GabrielaPoveda.zip" class="download-btn">
+                ⬇ Descargar taller
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
       </div>
 
     </div>
