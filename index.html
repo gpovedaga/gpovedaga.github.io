@@ -495,7 +495,7 @@
 
     .pdf-slide img {
       width: 100%;
-      height: 200px;          
+      height: 200px;
       object-fit: contain;
       object-position: top;
       display: block;
@@ -1001,6 +1001,18 @@
           </div>
         </div>
 
+        <div class="project-card" id="card-parcial-plsql">
+          <div class="project-card-body">
+            <h3>Ejercicios Parcial PL/SQL</h3>
+            <p>Ejercicios de repaso para el parcial de PL/SQL sobre el esquema HR (EMPLOYEES, DEPARTMENTS y JOBS). Incluye funciones de años de servicio y de salario frente al rango del cargo, un cursor parametrizado con FOR UPDATE que ajusta comisiones por antigüedad, un procedimiento de traslado de empleados con validaciones y excepciones propias, un trigger de auditoría que registra cada cambio campo por campo y el paquete PKG_RRHH con costo por departamento, bonificación por antigüedad y reporte, más un bloque de pruebas.</p>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <a href="src/Ejercicios Parcial PLSQL.sql" download="Ejercicios Parcial PLSQL.sql" class="download-btn">
+                ⬇ Descargar ejercicios
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div class="project-card" id="card-lab-mql">
           <div class="project-card-body">
             <h3>Lab MQL</h3>
@@ -1018,7 +1030,7 @@
             <h3>Taller Integrador: Banco Andino</h3>
             <p>Caso de una entidad financiera con 30.000 cuentas y 200.000 transferencias en Oracle Autonomous Database, trabajado desde SQL Developer con dos sesiones simultáneas. Se reprodujeron y corrigieron problemas reales de producción: actualización perdida, bloqueo pesimista (FOR UPDATE) frente a optimista (columna de versión), reparto de una cola con SKIP LOCKED, bloqueo de tabla por llave foránea sin índice e interbloqueo ORA-00060. Incluye optimización con planes de ejecución (índices compuestos, basados en función y de cobertura, clustering factor y costo de escritura), SQL analítico (ROW_NUMBER, SUM OVER, LAG, CTE recursiva, MERGE, PIVOT y LISTAGG) y un reto final: diagnosticar cuatro defectos del core bancario y reescribir la transferencia para que sea atómica y bloquee las cuentas en orden determinista.</p>
             <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px;">
-              <a href="src/TALLER BANCO ANDINO - MANRIQUE Y POVEDA (1).zip" download="Taller_BD2_BancoAndino.zip" class="download-btn">
+              <a href="src/TALLER BANCO ANDINO - MANRIQUE Y POVEDA.zip" download="Taller_BD2_BancoAndino.zip" class="download-btn">
                 ⬇ Descargar taller
               </a>
             </div>
@@ -1044,6 +1056,32 @@
             <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px;">
               <a href="src/Taller_MQL_DylanMancipe_JuanLopez_GabrielaPoveda.zip" download="Taller_MQL_DylanMancipe_JuanLopez_GabrielaPoveda.zip" class="download-btn">
                 ⬇ Descargar taller
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="card-proyecto-final">
+          <div class="project-card-body">
+            <h3>Proyecto Final: Los Pollos Hermanos</h3>
+            <p>Sistema de gestión de producción y venta de pollos de engorde, desarrollado en grupo con Dylan Mancipe y Juan Diego López. Usa persistencia políglota: PostgreSQL 18 para toda la parte transaccional (lotes, galpones, alimentación, sanidad, ventas, pagos y auditoría), con 34 tablas, 20 procedimientos, 48 funciones, 25 triggers, 22 vistas y 48 índices en PL/pgSQL, y MongoDB 7.0 para el seguimiento diario del crecimiento de cada lote. El backend en Spring Boot es el único que habla con las dos bases y valida en PostgreSQL que el lote exista y esté activo antes de guardar en MongoDB. El frontend está hecho en Angular 20 con TypeScript y PrimeNG. Los entregables incluyen propuesta, supuestos, acta de constitución, metodología, requerimientos y trazabilidad, cronograma Gantt, matriz RACI, matriz de riesgos, modelos E-R (Peter Chen, extendido, lógico y relacional), diccionario de datos, 17 reportes SQL, análisis de selección del sistema operativo y del RDBMS, implementación de MongoDB e informe ejecutivo final.</p>
+            <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:14px;">
+              <a href="https://github.com/JuanchoLopezGalvis/pollos_hermanos_back" target="_blank" class="project-link" style="margin-top:0;">Repositorio backend</a>
+              <a href="https://github.com/JuanchoLopezGalvis/pollos_hermanos_front_dos" target="_blank" class="project-link" style="margin-top:0;">Repositorio frontend</a>
+              <a href="src/Los_pollos_hermanos_entregables.zip" download="Los_pollos_hermanos_entregables.zip" class="download-btn">
+                ⬇ Descargar entregables
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" id="card-repaso-final">
+          <div class="project-card-body">
+            <h3>Repaso Final</h3>
+            <p>Apuntes de repaso preparados antes de la sustentación del proyecto final. Explican por qué se eligió PostgreSQL (matriz de decisión frente a MariaDB, lógica procedural y DDL transaccional) y por qué MongoDB para el seguimiento del crecimiento, las propiedades ACID, cómo el backend conecta las dos bases y valida cada lote, el _id y ObjectId de MongoDB, el teorema CAP, la diferencia entre función y procedimiento, RPO y RTO, y el proceso ETL con un modelo estrella para la bodega de datos.</p>
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <a href="src/REPASO.pdf" download="Repaso_Final.pdf" class="download-btn">
+                ⬇ Descargar repaso
               </a>
             </div>
           </div>
@@ -1210,8 +1248,8 @@
     lbNext.addEventListener('click', () => lbGo(lbState.index + 1));
     lbEl.addEventListener('click', e => { if (e.target === lbEl) closeCarouselLightbox(); });
 
-   
-    let activePdfViewer = null;  
+
+    let activePdfViewer = null;
 
     const pdfLightbox = document.getElementById('pdfLightbox');
     const pdfLbImg    = document.getElementById('pdfLbImg');
